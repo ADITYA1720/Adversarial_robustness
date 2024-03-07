@@ -32,19 +32,19 @@ Procedure:
 Initialize the adversarial example with the original input image.
 Compute the gradient of the loss function with respect to the input image.
 Update the adversarial example in the direction of the gradient with a small step size ($\alpha$).
-Clip the perturbed image to ensure it stays within an $\epsilon$-ball around the original image.
+Clip the perturbed image to ensure it stays within an epsilon-ball around the original image.
 Repeat steps 2-4 for a certain number of iterations or until convergence.
 
 Effectiveness: PGD is more robust compared to FGSM as it performs multiple steps of gradient descent, which often results in stronger adversarial examples. It's commonly used for evaluating model robustness against adversarial attacks.
 
-5. Targeted PGD (Projected Gradient Descent):
+4. Targeted PGD (Projected Gradient Descent):
    
 Objective: Targeted PGD is similar to untargeted PGD but aims to generate adversarial examples that are misclassified as a specific target class.
 
 Procedure:
 Compute the gradient of the loss function with respect to the input image.
 Instead of maximizing the loss, minimize the loss with respect to the target class.
-Update the adversarial example in the direction that minimizes the loss with respect to the target class, while ensuring it stays within an $\epsilon$-ball around the original image.
+Update the adversarial example in the direction that minimizes the loss with respect to the target class, while ensuring it stays within an epsilon-ball around the original image.
 Repeat steps 1-3 for a certain number of iterations or until convergence.
 
 Effectiveness: Targeted PGD is effective at generating adversarial examples that are misclassified as the specified target class. It's often used for evaluating model robustness against targeted attacks and for generating adversarial examples for adversarial training.
